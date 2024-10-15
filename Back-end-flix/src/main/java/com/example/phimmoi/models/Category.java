@@ -10,13 +10,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "category", schema = "phimhay")
+@Table(name = "category", schema = "flix")
 public class Category {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id_category", nullable = false)
     private Integer id;
 
-    @Column(name = "title", length = 100)
-    private String title;
+    @Column(name = "category", length = 20)
+    private String category;
 
 }

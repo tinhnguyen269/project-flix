@@ -9,10 +9,10 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "comment", schema = "phimhay")
+@Table(name = "comment", schema = "flix")
 public class Comment {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id_comment", nullable = false)
     private Integer id;
 
     @Column(name = "title")

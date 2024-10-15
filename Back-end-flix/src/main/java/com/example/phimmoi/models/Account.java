@@ -10,16 +10,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "account", schema = "phimhay")
+@Table(name = "account", schema = "flix")
 public class Account {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id_account", nullable = false)
     private Integer id;
 
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "email", length = 45)
+    @Column(name = "email", length = 50)
     private String email;
+
+    @Column(name = "password", length = 16)
+    private String password;
 
 }

@@ -7,18 +7,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "movie_category", schema = "phimhay")
+@Table(name = "movie_category", schema = "flix")
 public class MovieCategory {
     @Id
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_movie")
-    private Movie idMovie;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_category")
-    private Category idCategory;
+    private Category category;
 
 }

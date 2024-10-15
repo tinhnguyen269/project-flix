@@ -1,34 +1,45 @@
 package com.example.phimmoi.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "movie", schema = "phimhay")
+@Table(name = "movie", schema = "flix")
 public class Movie {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id_movie", nullable = false)
     private Integer id;
 
-    @Column(name = "title", length = 245)
+    @Column(name = "title", length = 50)
     private String title;
 
-    @Column(name = "description", length = 1000)
+    @Column(name = "rating")
+    private Double rating;
+
+    @Column(name = "duration", nullable = false)
+    private Integer duration;
+
+    @Lob
+    @Column(name = "quantity", nullable = false)
+    private String quantity;
+
+    @Column(name = "description", length = 500)
     private String description;
 
-    @Column(name = "img", length = 245)
-    private String img;
+    @Column(name = "image", length = 500)
+    private String image;
 
-    @Column(name = "trailer", length = 200)
-    private String trailer;
+    @OneToMany
+    @JoinColumn(name = "id_movie")
+    private List<MovieCategory> categories;
 
-    @Column(name = "link", length = 245)
-    private String link;
+    @OneToMany
+    @JoinColumn(name = "id_movie")
+    private List<ShortScreen> shortScreens;
 
 }
